@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/fullPage.js-master/dist/fullpage.min.css">
+    <script src="lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="lib/fullPage.js-master/dist/fullpage.min.js"></script>
+    <link rel="stylesheet" href="lib/animate.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="fp-container">
+        <div class="section">
+            <div class="wrap">
+                <h1 anmt="animated slideInDown" class="animated slideInDown">嘿嘿嘿</h1>
+                <img anmt="animated slideInUp" class="animated slideInUp" src="http://dummyimage.com/500x300"
+                    alt="实例图片">
+            </div>
+        </div>
+        <div class="section">
+            <div class="wrap">
+                <h1 anmt="animated bounceInLeft">哈哈哈</h1>
+                <img anmt="animated bounceInRight" src="http://dummyimage.com/500x300" alt="实例图片">
+            </div>
+        </div>
+        <div class="section">
+            <div class="wrap">
+                <h1 anmt="animated bounceInDown">哈哈哈</h1>
+                <img anmt="animated bounceInUp" src="http://dummyimage.com/500x300" alt="实例图片">
+            </div>
+        </div>
+        <div class="section">
+            <div class="wrap">
+                <h1 anmt="animated slideInDown">哈哈哈</h1>
+                <img anmt="animated slideInUp" src="http://dummyimage.com/500x300" alt="实例图片">
+            </div>
+        </div>
+        <div class="section">
+            <div class="wrap">
+                <h1 anmt="animated slideInDown">哈哈哈</h1>
+                <img anmt="animated slideInUp" src="http://dummyimage.com/500x300" alt="实例图片">
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $('.fp-container').fullpage({
+                sectionsColor: ['red', 'orange', 'yellow', 'green', 'blue'],
+                onLeave: function (indexObj, nextIndexObj, dir) {
+                    var index = indexObj.index;
+                    var nextIndex = nextIndexObj.index;
+                    var animateWrap = $('div.wrap');
+
+                    animateWrap.eq(index).children().each(function(){
+                        $(this).removeClass();
+                    })
+                    animateWrap.eq(nextIndex).children().each(function(){
+                        var attr=$(this).attr('anmt')
+                        $(this).addClass(attr);
+                        
+                    })
+
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
