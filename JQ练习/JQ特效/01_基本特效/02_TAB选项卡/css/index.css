@@ -1,0 +1,85 @@
+*{margin: 0;padding: 0%}
+ul{list-style: none;}
+a{
+    text-decoration: none;
+    color: black;
+}
+div.nav{
+    width: 399px;
+    height: 200px;
+    margin: 20px auto;
+    border: 1px solid rgb(230, 230, 230)
+}
+div.header{
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+}
+
+/* 浮动布局
+ul.navList{
+    width: 100%;
+    height: 30px;
+    margin: 0 auto;
+    text-align: center;
+}
+ul.navList li{
+    float: left;
+    text-align: center;
+    width: 20%;
+    line-height: 30px;
+    background-color: gray;
+    color: white;
+}  */
+
+/* 弹性盒模型布局 */
+ul.navList{
+    width: 100%;
+    height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+}
+ul.navList li{
+    box-sizing: border-box;
+    width: 20%;
+    line-height:29px;
+    background-color: rgb(230,230,230);
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+ul.navList li:hover{
+    color: red;
+}
+ul.navList li.selected{
+    border-bottom:none;
+    line-height: 30px;
+    border-left: 1px solid rgb(230, 230, 230);
+    border-right: 1px solid rgb(230, 230, 230);
+    background-color: #fff; 
+}
+ul.navList>li:nth-child(1){
+    border-left: none;
+}
+ul.navList li:nth-child(5){
+    border-right: none;
+}
+div.dom{
+    display: none;
+}
+div.nav-content div.dom{
+    display: none;
+    -webkit-column-count: 2;
+            column-count: 2;
+    text-align: center;
+    padding: 20px;
+}
+div.nav-content div.dom:nth-child(1){
+    display: block;
+}

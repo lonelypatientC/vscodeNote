@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/index.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(function(){
+            var min=$('div.min');
+            var cursor=$('div.cursor');
+            var max=$('div.max')
+            var mImg=$('div.max img')
+            min.on('mousemove',function(e){
+                var e=e||window.event   //兼容IE
+                var x=e.pageX-cursor.width()/2;
+                var y=e.pageY-cursor.height()/2;
+                cursor.offset({left:x,top:y})
+                if(cursor.offset().left<min.offset().left){
+                    cursor.offset({left:min.offset().left})
+                }
+                if(cursor.offset().top<min.offset().top){
+                    cursor.offset({top:min.offset().top})
+                }
+                if(cursor.offset().left+cursor.width()>min.offset().left+min.width()){
+                    cursor.offset({left:min.offset().left+min.width()-cursor.width()})
+                }
+                if(cursor.offset().top+cursor.height()>min.offset().top+min.height()){
+                    cursor.offset({top:min.offset().top+min.height()-cursor.height()})
+                }
+                mImg.css('margin-left',-cursor.position().left*3)
+                mImg.css('margin-top',-cursor.position().top*3)
+            })
+            min.hover(
+                function(){
+                    cursor.css('display','block')
+                    max.css('display','block')
+                },
+                function(){
+                    cursor.css('display','none')
+                    max.css('display','none')
+                }
+            )
+        })
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="min">
+            <div class="cursor"></div>
+            <img src="images/1.jpg" alt="">
+
+        </div>
+        <div class="max"><img src="images/1.jpg" alt=""></div>
+    </div>
+</body>
+
+</html>

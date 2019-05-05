@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/index.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(function () {
+            var bodys=$(".ac-body")
+            $(".ac-header").on("click", function () {
+                bodys.removeClass("in");
+                $(this).next().addClass("in");
+                
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <ul class="ac">
+        <li class="item">
+            <div class="ac-header">头部1</div>
+            <div class="ac-body in">主体1</div>
+        </li>
+    </ul>
+    <ul class="ac">
+        <li class="item">
+            <div class="ac-header">头部2</div>
+            <div class="ac-body">主体2</div>
+        </li>
+    </ul>
+    <ul class="ac">
+        <li class="item">
+            <div class="ac-header">头部3</div>
+            <div class="ac-body">主体3</div>
+        </li>
+    </ul>
+    <ul class="ac">
+        <li class="item">
+            <div class="ac-header">头部4</div>
+            <div class="ac-body">主体4</div>
+        </li>
+    </ul>
+</body>
+
+</html>

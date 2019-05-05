@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/index.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<!-- <script>
+    $(function () {
+        init();
+        $(window).on('resize',function(){
+            init();
+        })
+        $(window).scroll(checkAndOnload);
+
+        
+
+
+
+        function init() {
+            var winWidth = $(window).width();
+            var items = $('div.box div');
+            var itemsWidth = items.outerWidth()
+            var cols = Math.floor(winWidth / itemsWidth); //一行放置图片的列数
+
+            var heightArr = []; //
+            for (var i = 0; i < cols; i++) {
+                heightArr[i] = 0;
+            }
+
+            function minHandIndex(arr) { //查找数组中最小的高度和对应的索引值
+                var index = 0;
+                var minHeight = arr[0];
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i] < minHeight) {
+                        minHeight = arr[i];
+                        index = i;
+                    }
+                }
+                return [index, minHeight]
+            }
+
+            items.each(function (index, items) {
+
+                index = minHandIndex(heightArr)[0]
+                var minHeight = minHandIndex(heightArr)[1];
+                heightArr[index] += $(this).outerHeight();
+                $(this).css({ //设置图片的位置
+                    left: itemsWidth * index,
+                    top: minHeight
+                })
+            })
+        }
+
+    })
+</script> -->
+<script>
+    
+</script>
+
+<body>
+    <div class="box">
+        <div><img src="images/1.jpg" alt=""></div>
+        <div><img src="images/3.jpg" alt=""></div>
+        <div><img src="images/5.jpg" alt=""></div>
+        <div><img src="images/10.jpg" alt=""></div>
+        <div><img src="images/8.jpg" alt=""></div>
+        <div><img src="images/6.jpg" alt=""></div>
+        <div><img src="images/4.jpg" alt=""></div>
+        <div><img src="images/2.jpg" alt=""></div>
+        <div><img src="images/9.jpg" alt=""></div>
+        <div><img src="images/7.jpg" alt=""></div>
+        <div><img src="images/11.jpg" alt=""></div>
+        <div><img src="images/12.jpg" alt=""></div>
+        <div><img src="images/13.jpg" alt=""></div>
+        <div><img src="images/14.jpg" alt=""></div>
+        <div><img src="images/15.jpg" alt=""></div>
+    </div>
+</body>
+
+</html>

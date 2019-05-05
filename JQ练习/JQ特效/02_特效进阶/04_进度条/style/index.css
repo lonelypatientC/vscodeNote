@@ -1,0 +1,34 @@
+*{margin: 0;padding: 0;}
+div.progressBar{
+    position: relative;
+    width: 550px;
+    height: 40px;
+    margin: 20px auto;
+}
+div.progressBar div,span{
+    float: left;
+}
+div.bar{
+    position: relative;
+    width: 90%;
+    height: 40px;
+    background-color: gray;
+}
+div.bg{
+    height: 100%;
+    width: 10px;
+    background-color: orange;
+}
+div.cursor{
+    position: absolute;
+    width: 15px;
+    height: 46px;
+    background-color: orange;
+    top: -3px;
+}
+span.num{
+    position: absolute;
+    right: 0;
+    line-height: 40px;
+    margin-left: 15px;
+}

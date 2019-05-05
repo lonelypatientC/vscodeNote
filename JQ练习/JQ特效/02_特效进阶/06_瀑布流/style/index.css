@@ -1,0 +1,12 @@
+*{margin: 0;padding:0}
+div.box{
+    position: relative;
+}
+div.box div{
+    padding: 15px;
+    width: 220px;
+    position: absolute;
+}
+img{
+    width: 100%;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/index.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(function () {
+            function twinkle($obj, time) { //闪烁 参数:jq对象 闪烁时间/秒
+                setInterval(function () {
+                    $obj.fadeTo(time * 500 + 500, 0, function () {
+                        $obj.fadeTo(time * 500 + 500, 1)
+                    })
+                }, time * 1000)
+                $obj.on('mousedown', function () {
+                    var num = 0;
+                    setInterval(function () {
+                        num += 5;
+                        $(this).css('transform', 'rotate(' + num + 'deg)')
+                    }, 1000)
+
+                })
+            }
+
+            function createStar(num) { //产出span num:产出个数
+                var docW = $(document).width(),
+                    docH = $(document).height();
+                stars = [];
+                for (var i = 0; i < num; i++) {
+                    var ranX = Math.random() * docW;
+                    var ranY = Math.random() * docH;
+                    var star = $('<span></span>');
+                    star.offset({
+                        top: ranY,
+                        left: ranX
+                    }); //随机产出位置
+                    var zoom = Math.random() * 3 //随机缩放倍数
+                    star.css('transform', 'scale(' + zoom + ')')
+                    star.appendTo($('body'));
+                    stars[i] = star;
+                }
+                return stars;
+            }
+
+            var stars = createStar(100);
+            for (var i = 0; i < stars.length; i++) {
+                stars[i].mouseenter(function () {
+                    $(this).animate({
+                        'transform': 'rotate(120deg)'
+                    }, 1000);
+                })
+                var randomTime = Math.random() * 2;
+                twinkle(stars[i], randomTime)
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <span class="star"></span>
+</body>
+
+</html>

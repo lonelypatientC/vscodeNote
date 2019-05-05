@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/index.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(function(){
+            var reg = /[A-z]\w*/;
+            var userName=$('input#userName')
+            var hint=$('span.hint')
+            userName.blur(function(){
+                var value = userName.val();
+                var b = reg.test(value);
+                if(!b){
+                    hint.css('color','red')
+                    hint.text('输入错误，数位必须是字母')
+                }else{
+                    hint.css('color','green')
+                    hint.text('可以使用此用户名')
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <form action="#" method="POST">
+        <label for="userName">用户名：<input type="text" name="userName" id="userName" placeholder="请输入您的用户名"></label>
+        <span class="hint"></span>
+        <br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+
+</html>

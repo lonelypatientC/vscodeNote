@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/index.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(function(){
+            var minHeight=$("nav").offset().top;
+            var asideHeight=$('aside').offset().top;
+            $(window).scroll(function(){
+                var scrollTop=$(window).scrollTop();
+                var asideTop=scrollTop+asideHeight+'px'
+                if(scrollTop>minHeight){
+                    $("nav").offset({top:scrollTop});
+                }else if(scrollTop<minHeight){
+                    $("nav").offset({top:minHeight});
+                }
+                var asideTop=scrollTop+asideHeight+'px'
+                $('aside').animate({top:asideTop},30)
+            })
+        })
+    </script>
+</head>
+<body>
+    <header><h1>I am Header</h1></header>
+    <nav>
+        <ul>
+            <li>导航栏</li>
+            <li>导航栏</li>
+            <li>导航栏</li>
+            <li>导航栏</li>
+            <li>导航栏</li>
+        </ul>
+    </nav>
+    <aside><img src="../04_轮播图/images/1.jpg" alt=""></aside>
+    <section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </section>
+    <footer>
+        <button onclick="$(window).scrollTop(0)">返回顶部</button>
+    </footer>
+</body>
+</html>
